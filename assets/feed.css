@@ -1,0 +1,101 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F4F2EE;
+}
+.navbar {
+    background-color: white;
+    /* Dark LinkedIn-like color */
+}
+
+.navbar-toggler {
+    border-color: transparent;
+    color: black !important;
+}
+
+.navbar-toggler-icon {
+    /* background-color: black; */
+    color: black !important;
+}
+
+.navbar-nav {
+    margin-left: auto;
+    /* Align menu items to the right */
+}
+
+.logout-icon {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+    /* Make sure logout icon stays right-aligned */
+}
+.nav-link{
+    color: black;
+    font-size: 25px;
+    padding-left: 18px !important;
+}
+.container{
+    background-color: white;
+    margin-top: 70px;
+    /* min-height: 50vh; */
+}
+.start-post{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+}
+.start-post i{
+    font-size: 20px;
+    padding-right: 30px;
+}
+.start-post input{
+    width: 70%;
+    height: 40px;
+    border: 1px solid rgba(0, 0, 0, 0.527);
+    outline: none;
+    border-radius: 20px;
+    padding-left: 20px;
+}
+.feed{
+    /* border: 1px solid black; */
+    display: flex;
+    padding-left: 80px;
+    padding-right: 80px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+.image{
+    width: 90px;
+    height: 100%;
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -20px;
+}
+.name-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name h1{
+    font-size: 1.6rem;
+    font-size: bold !important;
+}
+.text-area{
+    min-height: 15vh;
+}

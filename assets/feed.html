@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="feed.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand text-blue" href="#">	<h2>Linked<span> 
+          <i class="fab fa-linkedin"></i> 
+        </span></h2> </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link " href="#">Home <i class="fa-solid fa-house"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">My Network <i class="fa-solid fa-globe"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Jobs <i class="fa-solid fa-bars-progress"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Messaging <i class="fa-regular fa-message"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">Notifications <i class="fa-solid fa-bell"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link " href="#">ME <i class="fa-solid fa-house-user"></i></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><i class="fas fa-sign-out-alt"></i></a>
+            </li> 
+          </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+      <div class="start-post container">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" readonly placeholder="Start A Post" id="INPUT">
+      </div>
+
+
+      <!-- feed start  -->
+
+
+      <div class="feed container">
+        <div class="name-image">
+          <div class="image">
+        <i class="fa-solid fa-user "></i>
+          </div>
+          <div class="name">
+            <h1>Muhammad Ahmed</h1>
+            <p>Time <i class="fa-solid fa-globe"></i></p>
+          </div>
+        </div>
+
+        <div class="text-area">
+          
+        </div>
+
+
+      </div>
+
+
+      <!-- feed end  -->
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
