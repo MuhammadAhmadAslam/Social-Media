@@ -303,3 +303,6 @@ body{
 .create-a-post{
   cursor:  pointer !important;
 }
+#disabled-input{
+  cursor: pointer !important;
+}
