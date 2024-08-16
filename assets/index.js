@@ -29,6 +29,8 @@ import { getAuth ,
     onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
+        console.log(user);
+        
       } else {
         window.location.href = 'assets/signup.html'
       }

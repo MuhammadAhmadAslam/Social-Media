@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { getAuth , onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
@@ -36,6 +36,7 @@ uploadFile.addEventListener('click', (event) => {
   const fileInput = document.getElementById('file-input');
   const file = fileInput.files[0];
   const textarea = document.getElementById('textarea')
+  const postStorageRef = ref(storage, file.name);
   uploadBytes(postStorageRef, ref(storage, file.name))
     .then((snapshot) => {
       return getDownloadURL(snapshot.ref);
@@ -45,12 +46,11 @@ uploadFile.addEventListener('click', (event) => {
       onAuthStateChanged(auth, (user) => {
         if (user) {
           const uid = user.uid;
+          console.log(user);
           return addDoc(collection(db, "UserDetails"), {
             userUid: uid,
             url: downloadURL,
-            text: textarea.value,
-            fileName: file.name,
-            timestamp: new Date(),
+            posts: [].push({text: textarea.value , file: file.name,timestamp: new Date().toLocaleTimeString(),}),
           });
         } else {
           alert('masla arha ha')
@@ -59,7 +59,7 @@ uploadFile.addEventListener('click', (event) => {
      
     })
     .then(() => {
-      alert('File URL stored in Firestore!');
+        
       HideLoader()
     })
     .catch((e) => alert(e.message));
