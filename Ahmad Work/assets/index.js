@@ -73,39 +73,53 @@ createAPost.addEventListener('click' ,(event) => {
 
 function getPosts(){
     let postContainr = document.getElementById('post-container')
-    postContainr.innerHTML = ''
+    let blogrow = document.getElementById('blog-row')
+    blogrow.innerHTML = ''
     onSnapshot(collection(db, "UserPosts"), (snapshot) => {
         snapshot.forEach((doc) => {
             console.log(doc.id);   
             console.log(doc.data() , 'data');   
             let data = doc.data()
             console.log(data.url);
-            
-            postContainr.innerHTML += `<div class="image-name container mt-5">
-      <div class="icon">
-        <i class="fas fa-user"></i>
-      </div>
-      <div class="name">
-        <h4>Muhammad Ahmed</h4>
-        <p>${data.posts.timestamp}</p>
-        <p></p>
-      </div>
-    </div>
-  
-    <div class="text-area">
-                    <p>${data.posts.text}</p>
+                
+            blogrow.innerHTML += `        <div class="col-sm-12 col-lg-4 col-md-6 blog-card">
+            <div class="title-image">
+                <img src="" alt="">
+            </div>
+            <div class="title">
+                <h1>${data.posts.title}</h1>
+                <p>${data.posts.timestamp}</p>
+            </div>
+            <div class="description">
+                <p>${data.posts.text}</p>
+            </div>
+        </div>`
 
-    </div>
+//             postContainr.innerHTML += `<div class="image-name container mt-5">
+//       <div class="icon">
+//         <i class="fas fa-user"></i>
+//       </div>
+//       <div class="name">
+//         <h4>Muhammad Ahmed</h4>
+//         <p>${data.posts.timestamp}</p>
+//         <p></p>
+//       </div>
+//     </div>
   
-  <div class='images-div'>
-            <img src='' alt='' width='100%' height='500px'>
-  </div>
-    <div class="actions">
-      <button class="like-button">Like</button>
-      <button class="comment-button">Comment</button>
-      <button class="share-button">Share</button>
-    </div>
-  </div>`
+//     <div class="text-area">
+//                     <p>${data.posts.text}</p>
+
+//     </div>
+  
+//   <div class='images-div'>
+//             <img src='' alt='' width='100%' height='500px'>
+//   </div>
+//     <div class="actions">
+//       <button class="like-button">Like</button>
+//       <button class="comment-button">Comment</button>
+//       <button class="share-button">Share</button>
+//     </div>
+//   </div>`
         })
     })
 }

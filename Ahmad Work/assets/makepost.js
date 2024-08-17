@@ -36,6 +36,7 @@ uploadFile.addEventListener('click', (event) => {
   const fileInput = document.getElementById('file-input');
   const file = fileInput.files[0];
   const textarea = document.getElementById('textarea')
+  const title = document.getElementById('title')
   const postStorageRef = ref(storage, file.name);
   uploadBytes(postStorageRef, ref(storage, file.name))
     .then((snapshot) => {
@@ -47,12 +48,17 @@ uploadFile.addEventListener('click', (event) => {
         if (user) {
           const uid = user.uid;
           console.log(user);
-          return addDoc(collection(db, "UserPosts"), {
+        addDoc(collection(db, "UserPosts"), {
             userUid: uid,
             url: downloadURL,
-            posts: {text: textarea.value , file: file.name,timestamp: new Date().toLocaleTimeString(),},
+            posts: {text: textarea.value , title:  title.value, file: file.name,timestamp: new Date().toDateString(),},
           });
-          window.location.href = '../index.html'
+        addDoc(collection(db, "UserDetails"), {
+            userUid: uid,
+            url: downloadURL,
+            posts: {text: textarea.value , title:  title.value, file: file.name,timestamp: new Date().toDateString(),},
+          });
+          
         } else {
           alert('masla arha ha')
         }
